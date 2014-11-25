@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.10'
+ruby '2.0.0'
 
 # use postgreSQL for the production database and SQLite3 for development. 
 group :production do
@@ -11,7 +12,11 @@ group :production do
 
  group :development do 
    gem 'sqlite3'
+   gem 'pry'
  end
+
+#for user authentication gem
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

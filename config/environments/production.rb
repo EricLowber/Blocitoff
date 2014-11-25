@@ -26,6 +26,9 @@ Blocitoff::Application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
+  #set Devise mailer options.
+  config.action_mailer.default_url_options = { host: 'ericlowber-blocitoff.herokuapp.com' }
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
