@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :body
       t.references :list, index: true
+      t.boolean :done
       t.timestamps
     end
   end
