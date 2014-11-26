@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141124011011) do
   create_table "items", force: true do |t|
     t.string   "body"
     t.integer  "list_id"
-    t.boolean  "done"
+    t.boolean  "done",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
