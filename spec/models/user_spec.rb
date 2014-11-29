@@ -1,13 +1,11 @@
-require 'rails_helper'
+  require 'rails_helper'
 
-describe User do
-  before do
-    @user_attr = create(:user) 
+  describe User do 
+    before(:each) do
+      @user = build(:user)
+       end
 
-  end
-
-   it 'has a valid factory' do
-    User.create!(@user_attr)      
-   end
+  it "has a valid factory" do
+   expect(@user.valid?).to eq(true)
+   end 
 end
-
