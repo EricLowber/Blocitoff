@@ -3,7 +3,6 @@ class CreateLists < ActiveRecord::Migration
     create_table :lists do |t|
       t.string :name
       t.references :user, index: true
-    
       t.timestamps
     end
   end
