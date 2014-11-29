@@ -1,9 +1,9 @@
 class Item < ActiveRecord::Base
   belongs_to :list
+  belongs_to :user
 
-  scope :created_after, -> (date) { where("items.created_at > ?", date) }
-  scope :visible_to, -> (user) { user ? all : where(done: false) }
-   
+  scope :unfinished, -> { where("items.created_at > 7.days.ago AND items.done = false") }
+ 
   validates :body, length: { minimum: 5 }, presence: true
   validates :user, presence: true
  end

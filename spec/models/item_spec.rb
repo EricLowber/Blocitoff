@@ -23,19 +23,22 @@ describe Item do
   describe "validations" do
     describe "length validation" do
       
+      before do
+        user = create(:user)
+        item = create(:item, user: user)
+      end
+
       it "only allows items with 5 or more characters." do
-        i = Item.body(length: 4)
+        i = item.body(length: 4)
         expect(i.valid?).to eq(false)
 
-        i = Item.body(length: 6)
+        i = item.body(length: 6)
         expect(i.valid?).to eq(true)
     end
    end
   end
  end 
 end
-
-
 
 
 
