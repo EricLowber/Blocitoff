@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
 
 describe List do
   describe "validations" do

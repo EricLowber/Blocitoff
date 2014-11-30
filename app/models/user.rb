@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
  
-  #== schema information. 
+  # == schema information. 
   # create_table "users", force: true do |t|
   #   t.string   "name"
   #   t.string   "email",                  default: "", null: false
@@ -29,4 +29,5 @@ class User < ActiveRecord::Base
   has_many :items, through: :list
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  validates :name, presence: true
 end
