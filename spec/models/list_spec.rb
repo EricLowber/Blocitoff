@@ -1,18 +1,15 @@
 require 'rails_helper'
-require 'database_cleaner'
-
-DatabaseCleaner.strategy = :truncation
 
 describe List do
   describe "validations" do
     describe "length validation" do
-
-      it "only allows list names with 5 or more characters." do
-        i = List.name(value: 4)
-        expect(i.valid?).to eq(false)
-
-        i = List.name(value: 6)
-        expect(i.valid?).to eq(true)
+      
+      before(:each) do
+        User.destroy_all
+        @list = build(:list, name: nil)
+        end
+       it "does not allow items with less than 5 characters." do
+       expect(@list.valid?).to be false
         end
       end
     end

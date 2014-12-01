@@ -1,8 +1,7 @@
-require 'faker'
 
 FactoryGirl.define do 
-  factory :list do |f|
-    f.name { Faker::Lorem.word }
+  factory :list do
+    name 'ListName'
     user
   end  
 end

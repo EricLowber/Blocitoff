@@ -1,6 +1,14 @@
 Blocitoff::Application.routes.draw do
   devise_for :users
-  root "application#hello"
+
+  resources :lists do
+    resources :items 
+  end
+  
+  get 'about' => 'welcome#about'
+  root "welcome#index"
+
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,4 +63,4 @@ Blocitoff::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
