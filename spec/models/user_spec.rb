@@ -2,9 +2,9 @@
 
   describe User do 
     before(:each) do
-     
-      @user = build(:user)
-       end
+     User.destroy_all
+     @user = build(:user)
+      end
 
   it "has a valid factory" do
    expect(@user.valid?).to eq(true)
