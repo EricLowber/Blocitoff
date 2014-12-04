@@ -6,6 +6,6 @@ class Item < ActiveRecord::Base
   scope :finished, -> { where('done' => true) }
 
   validates :body, length: { minimum: 5 }, presence: true
-  validates :list, presence: true
+  # validates :list, presence: true
  end
 

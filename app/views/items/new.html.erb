@@ -1,0 +1,6 @@
+<h1>Items#new</h1>
+
+<%= form_for Item.new do |form| %>
+  <%= form.text_field :body, placeholder: 'Body' %> 
+   <%= form.submit 'Save' %>
+<% end %> 

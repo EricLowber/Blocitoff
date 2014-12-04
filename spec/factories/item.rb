@@ -1,7 +1,7 @@
 
 FactoryGirl.define do 
   factory :item do 
-    body 'itembody'
+    body 'washcar'
     list 
     end
  end
