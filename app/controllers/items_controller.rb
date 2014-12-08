@@ -1,23 +1,22 @@
 class ItemsController < ApplicationController
  
   def new
+    @item = Item.new
   end
-
-  def show
-    @item = Item.find(params[:id])
-  end
-
-
-  def index
-  end  
-
-
-
+ 
 
   def create
-    @item = Item.new(item_params)
-    @item.save
-    redirect_to @item, notice: 'Your new ITEM was saved.'
+    @list = List.find(params[:list_id])   
+    @item = current_user.items.build( item_params )
+    @item.list = @list
+
+    if @item.save
+       flash[:notice] = "Item was created."     
+          redirect_to @list
+    else 
+       flash[:error] = "Error Creating Item. Please try again." 
+          redirect_to @item   
+    end 
   end
 
 private

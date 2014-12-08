@@ -18,6 +18,9 @@ group :production do
 #for user authentication gem
 gem 'devise'
 
+#Add Figaro for secure configuration
+ gem 'figaro', '1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -55,7 +58,9 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
-
+#use bootstrap as CSS framework. 
+ gem 'bootstrap-sass', '~> 3.1.1'
+ 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

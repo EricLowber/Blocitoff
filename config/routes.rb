@@ -1,15 +1,16 @@
 Blocitoff::Application.routes.draw do
-  root :to => 'items#new' 
-  devise_for :users
-    
 
-
-  resources :items, only: [:new, :create, :show, :index] 
-   
+  root :to => 'welcome#index' 
   
+  devise_for :users
+    resources :users, only: [:update, :show, :new, :create]
+
+  resources :lists, only: [:show, :new, :create] do 
+    resources :items, only: [:new, :create, :show, :index] 
+   end
+
   get 'about' => 'welcome#about'
- 
- 
+  
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

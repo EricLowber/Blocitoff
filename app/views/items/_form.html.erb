@@ -1,0 +1,4 @@
+<%= form_for [@list, Item.new] do |form| %>
+  <%= form.text_field :body, placeholder: 'Body' %> 
+   <%= form.submit 'Save' %>
+<% end %> 
