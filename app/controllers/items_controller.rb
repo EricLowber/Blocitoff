@@ -6,8 +6,8 @@ class ItemsController < ApplicationController
  
 
   def create
-    @list = List.find(params[:list_id])   
-    @item = current_user.items.build( item_params )
+    @list = List.find(params[:list_id])
+    @item = Item.new(item_params)
     @item.list = @list
 
     if @item.save
@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
           redirect_to @list
     else 
        flash[:error] = "Error Creating Item. Please try again." 
-          redirect_to @item   
+          redirect_to @list
     end 
   end
 

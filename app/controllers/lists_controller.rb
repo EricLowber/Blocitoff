@@ -1,8 +1,8 @@
 class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
-    @items = @list.items    
-  end
+    @items = @list.items
+   end
 
   def create
     @list = List.create(list_params)
