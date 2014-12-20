@@ -26,7 +26,21 @@ end
 end
 users = User.all
 
+
+# Create an admin user
+admin = User.new(
+  name:     'Admin User',
+  email:    'admin@example.com',
+  password: 'helloworld',
+  # role:     'admin'
+)
+admin.skip_confirmation!
+admin.save!
+
+
 puts "Seed finished"
 puts "#{List.count} lists created."
 puts "#{Item.count} items created." 
 puts "#{User.count} users created."
+
+

@@ -1,4 +1,10 @@
-<h1>Lists#new</h1>
+<h1>Create a To Do List</h1>
+
+<%= form_for List.new do |form| %>
+  <%= form.text_field :name, placeholder: 'Name' %>
+   <%= form.submit 'Save' %>
+<% end %> 
+
 
 
 

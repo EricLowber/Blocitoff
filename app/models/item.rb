@@ -5,7 +5,7 @@ class Item < ActiveRecord::Base
   scope :unfinished_and_recent, -> { unfinished.where("created_at > ?", Time.now-7.days) }
   scope :finished, -> { where('done' => true) }
 
-  validates :body, length: { minimum: 5 }, presence: true
+  validates :body, length: { minimum: 2 }, presence: true
   # validates :list, presence: true
  end
 
